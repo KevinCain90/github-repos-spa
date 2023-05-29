@@ -15,7 +15,11 @@ const RepoCard = ({repoDetails}) => {
         <div className="w-1/3 mb-2 -mx-2 text-gray-500">
             <div class="mx-6 my-2">
                 <div className='p-4 border rounded-md border-neutral-200 max-h-[400px]'>
-                    <h3 class="font-bold text-base mb-2 text-center">{repoDetails.name}</h3>
+                    <a href={repoDetails.owner.html_url}>
+                        <h3 class="font-bold text-base mb-2 text-center text-sky-600">
+                            {repoDetails.name}
+                        </h3>
+                    </a>
                     <p class="text-sm mb-6 h-[80px]">
                         {repoDetails.description}
                     </p>
@@ -24,8 +28,13 @@ const RepoCard = ({repoDetails}) => {
                         {repoDetails.owner.login}
                     </p>
                     <p className='flex items-center mb-2 text-sm'>
-                       <FaGithubSquare className="mr-2"/>
-                       <button onClick={handleChangeActive} className='text-sky-600'>View more details</button> 
+                        <FaGithubSquare className="mr-2"/>
+                        <a href={repoDetails.html_url} target="_blank" rel="noreferrer" className='text-sky-600'>
+                            Repository link
+                        </a>
+                    </p>
+                    <p className='mb-2 text-sm'>
+                       <button onClick={handleChangeActive}>Click here to view more details</button> 
                     </p>
                     {viewMoreDetails && (
                         <div className='flex flex-col mb-2 text-sm'>
@@ -41,17 +50,8 @@ const RepoCard = ({repoDetails}) => {
                             <p>
                                 <b>Issues:</b> {repoDetails.open_issues_count}
                             </p>
-                            <p>
-                                <b>Issues:</b> {repoDetails.open_issues_count}
-                            </p>
                         </div>
                     )}
-                    <div className='text-sm'>
-                        View repository on {' '} 
-                        <a href={repoDetails.html_url} target="_blank" rel="noreferrer" className='text-sky-600'>
-                            GitHub
-                        </a>
-                    </div>
                 </div>
             </div>
            
