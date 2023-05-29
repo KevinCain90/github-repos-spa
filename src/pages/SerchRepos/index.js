@@ -29,7 +29,7 @@ const SearchPage = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div className='container grid grid-cols-3 gap-4 m-auto my-8'>
+            <div className='flex flex-wrap mx-40 my-8'>
                 {searchResults && searchResults.length > 0 ?
                     searchResults.map(repo => (
                         <RepoCard repoDetails={repo} />
