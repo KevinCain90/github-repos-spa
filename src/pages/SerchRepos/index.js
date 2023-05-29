@@ -32,7 +32,7 @@ const SearchPage = () => {
             <div className='flex flex-wrap mx-40 my-8'>
                 {searchResults && searchResults.length > 0 ?
                     searchResults.map(repo => (
-                        <RepoCard repoDetails={repo} />
+                        <RepoCard repoDetails={repo} key={repo.id} />
                     ))
                 : 
                     <div className='p-4 text-lg'>No results, search for repositories...</div>

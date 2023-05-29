@@ -25,12 +25,28 @@ const RepoCard = ({repoDetails}) => {
                     </p>
                     <p className='flex items-center mb-2 text-sm'>
                        <FaGithubSquare className="mr-2"/>
-                       <button onClick={handleChangeActive}>View more details</button> 
+                       <button onClick={handleChangeActive} className='text-sky-600'>View more details</button> 
                     </p>
                     {viewMoreDetails && (
-                        <div>test for state</div>
+                        <div className='flex flex-col mb-2 text-sm'>
+                            <p>
+                                <b>Forks:</b> {repoDetails.forks}
+                            </p>
+                            <p>
+                             <b>Likes:</b> {repoDetails.watchers}
+                            </p>
+                            <p>
+                                <b>Stars:</b> {repoDetails.stargazers_count}
+                            </p>
+                            <p>
+                                <b>Issues:</b> {repoDetails.open_issues_count}
+                            </p>
+                            <p>
+                                <b>Issues:</b> {repoDetails.open_issues_count}
+                            </p>
+                        </div>
                     )}
-                    <div>
+                    <div className='text-sm'>
                         View repository on {' '} 
                         <a href={repoDetails.html_url} target="_blank" rel="noreferrer" className='text-sky-600'>
                             GitHub
