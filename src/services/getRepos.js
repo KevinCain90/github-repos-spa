@@ -10,7 +10,7 @@ const getRepos = query => {
         `https://api.github.com/search/repositories?q=${query}`
       )
       .then(function(response) {
-        return response.data.results.map(repos => repos);
+        return response.data.items.map(repos => repos);
       })
       .catch(function(err) {
         console.error(err);
