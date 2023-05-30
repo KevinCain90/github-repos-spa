@@ -17,17 +17,32 @@ const SearchPage = () => {
         });
     }, [searchInput]);
 
+    const sortOptions = [
+        { label: "Best match", sort: "" },
+        { label: "Most stars", sort: "stars" },
+        { label: "Fewest stars", sort: "stars", order: "asc" },
+        { label: "Most forks", sort: "forks" },
+        { label: "Fewest forks", sort: "forks", order: "asc" },
+    ];
+
     return ( 
         <>
             <div className="w-full p-6 bg-[#0D1117] flex justify-center flex-row">
                 <FaGithub color='white' size='50' className='mr-4'/>
                 <input
-                    className='h-[50px] w-[400px] p-2 rounded-md'
+                    className='h-[50px] w-[400px] p-2 rounded-md mr-2'
                     type="text"
                     placeholder="Search for repositories"
                     value={searchInput}
                     onChange={handleChange}
                 />
+                <select className='h-[50px] w-[150px] p-2 rounded-md'>
+                    {sortOptions.map(option => (
+                        <option key={option.id}>
+                          {option.label}
+                        </option>
+                    ))}
+                </select>
             </div>
             <div className='flex flex-wrap mx-40 my-8'>
                 {searchResults && searchResults.length > 0 ?
