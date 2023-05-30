@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react'
+import Modal from 'react-modal';
+import ReactMarkdown from 'react-markdown'
 import getReadme from '../services/getReadme';
 import { FaBook, FaGithubSquare } from 'react-icons/fa'
 
 const RepoCard = ({repoDetails}) => {
     const [viewMoreDetails, setViewMoreDetails] = useState(false);
+    const [modalIsOpen, setIsOpen] = useState(false);
     const [readme, setReadme] = useState("");
 
     useEffect(() => {
@@ -11,6 +14,15 @@ const RepoCard = ({repoDetails}) => {
             setReadme(data);
         })
     }, [repoDetails]);
+
+    const openModal = () => {
+        setIsOpen(true);
+    }
+
+    const closeModal = () => {
+        setIsOpen(false);
+    }
+
 
     const handleChangeActive = () => {
         setViewMoreDetails((prevState) => {
@@ -57,9 +69,16 @@ const RepoCard = ({repoDetails}) => {
                             <p className='mb-4'>
                                 <b>Issues:</b> {repoDetails.open_issues_count}
                             </p>
-                            <p>
-                               View readme in modal by clicking here
+                            <p className='text-sky-600'>
+                               <button onClick={openModal}>View readme in modal by clicking here</button>
                             </p>
+                            <Modal
+                                isOpen={modalIsOpen}
+                                onRequestClose={closeModal}
+                                contentLabel="Example Modal"
+                            >
+                              <ReactMarkdown>{readme}</ReactMarkdown>
+                            </Modal>
                         </div>
                     )}
                 </div>
