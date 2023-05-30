@@ -1,16 +1,23 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import getReadme from '../services/getReadme';
 import { FaBook, FaGithubSquare } from 'react-icons/fa'
 
 const RepoCard = ({repoDetails}) => {
     const [viewMoreDetails, setViewMoreDetails] = useState(false);
+    const [readme, setReadme] = useState("");
+
+    useEffect(() => {
+        getReadme(repoDetails).then(data => {
+            setReadme(data);
+        })
+    }, [repoDetails]);
 
     const handleChangeActive = () => {
         setViewMoreDetails((prevState) => {
-          return !prevState;
+            return !prevState;
         });
-      };
+    };
 
-    console.log(repoDetails)
     return (
         <div className="w-1/3 mb-2 -mx-2 text-gray-500">
             <div class="mx-6 my-2">
@@ -47,8 +54,11 @@ const RepoCard = ({repoDetails}) => {
                             <p>
                                 <b>Stars:</b> {repoDetails.stargazers_count}
                             </p>
-                            <p>
+                            <p className='mb-4'>
                                 <b>Issues:</b> {repoDetails.open_issues_count}
+                            </p>
+                            <p>
+                               View readme in modal by clicking here
                             </p>
                         </div>
                     )}
