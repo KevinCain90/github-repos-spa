@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Naimuri tech test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Framework:**
 
-## Available Scripts
+- React.js
 
-In the project directory, you can run:
+**Packages used:**
 
-### `npm start`
+- Axios
+- Tailwind
+- React-modal
+- React-Markdown
+- React-icons
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Running the app**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To run this project you will need to download it onto your local machine and install all dependencies.
 
-### `npm test`
+Navigate inside the directory and install all dependencies by entering the following command on your terminal window:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`npm install`
 
-### `npm run build`
+Once completed, run:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Screenshots**
+![image](https://github.com/KevinCain90/github-repos-spa/assets/47657841/1484f871-2008-40d3-8a5a-79f014792063)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img width="1715" alt="image" src="https://github.com/KevinCain90/github-repos-spa/assets/47657841/4590e5d9-d085-4c58-aa50-5ef396b1bd8b">
 
-### `npm run eject`
+<img width="1705" alt="image" src="https://github.com/KevinCain90/github-repos-spa/assets/47657841/ef9188a1-fc3d-4d60-a543-d07e9bbd346d">
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**What I would do better with more time**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Add tests for the search, filtering and displaying of the information journey
+- Focus on refining the mobile view of the site
+- Add typescript for better type safety and error checking
+- Add better error handling for api errors and api timeouts
+- Format the readme information better and potentially not use a package for this
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Implementation thoughts & struggles**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+My main struggle here was getting the filtering to work, this was mainly down to not wanting to go over the time set for the technical test, but also how the search param and sorting params could be concatinated and passed into the getRepos service.
+I also found it challenging getting the readme information and displaying it without impacting the overall UI, which is why i opted for a modal so that it would not impact what the user sees on the search screen.
 
-## Learn More
+I chose axios over fetch purely because it performs automatic json data transformation and thought this would save me some time over the course of the challenge.
+For smaller projects like this, I would normally go with fetch over axios.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I chose tailwind because I find it quciker to write and maintain my code. I also like how I know exactly what classes refer to what inside my code.
